@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PAT.Models.DietRecommendation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.DoctorID_IN_Diet.FirstName)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DietDuration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DietContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecommendedExercise)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.DoctorID_IN_Diet.FirstName)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DietDuration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DietContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecommendedExercise)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.DietID }, htmlAttributes: new { onclick = "return pop('Do you  want to Edit ?')" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.DietID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.DietID }, htmlAttributes: new { onclick = "return pop('Do you want to Delete?')" }) |
+        </td>
+    </tr>
+}
+
+</table>
+<script type="text/javascript">
+    function pop(txt) {
+        if (confirm(txt))
+            return true;
+        else
+            return false;
+    }
+</script>

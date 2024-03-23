@@ -1,0 +1,80 @@
+﻿@model PAT.Models.Patient.TestDetails
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TestDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TestDetails_IN_PI.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestDetails_IN_PI.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestDetails_IN_Test.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestDetails_IN_Test.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test_TODO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test_TODO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestPerformedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestPerformedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test_Result)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test_Result)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isActive)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

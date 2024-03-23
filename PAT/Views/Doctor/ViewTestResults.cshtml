@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PAT.Models.Patient.TestDetails>
+
+@{
+    ViewBag.Title = "ViewTestResults";
+}
+
+<h2>ViewTestResults</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TestDetails_IN_Test.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestDetails_IN_PI.Illnes)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestDetails_IN_Test.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestDetails_IN_PI.Illnes)
+    </td>
+
+    <td>
+        @Html.ActionLink("Add Test", "AddTest", new { id = item.ID }) |
+        @Html.ActionLink("Add View", "AddView", new { id = item.ID }) |
+    </td>
+</tr>
+}
+
+</table>

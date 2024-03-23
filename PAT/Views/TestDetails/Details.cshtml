@@ -1,0 +1,74 @@
+﻿@model PAT.Models.Patient.TestDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TestDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TestDetails_IN_PI.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestDetails_IN_PI.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestDetails_IN_Test.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestDetails_IN_Test.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test_TODO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test_TODO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestPerformedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestPerformedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Test_Result)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Test_Result)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isActive)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

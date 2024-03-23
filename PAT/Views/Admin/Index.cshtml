@@ -1,0 +1,38 @@
+﻿@{ 
+    ViewBag.Title = "Index";
+}
+
+<h2></h2>
+
+@using (Html.BeginForm())
+{
+
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-6 table-bordered table-hover" style="min-height: 100px;">
+                <div class="container-fluid">
+                    <div class="card-block">
+                        <h4 class="card-title" style="margin-top:40px">@Html.ActionLink("Doctors", "Doctors", "Admin")</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 table-bordered" style="min-height: 100px;">
+                <div class="container-fluid">
+                    <div class="card-block">
+                        <h4 class="card-title" style="margin-top:40px">@Html.ActionLink("Clerks", "Clerks", "Admin")</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 table-bordered" style="min-height: 100px;">
+                <div class="container-fluid">
+                    <div class="card-block">
+                        <h4 class="card-title" style="margin-top:40px">@Html.ActionLink("Patient", "Patient", "Admin")</h4>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+}

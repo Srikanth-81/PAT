@@ -1,0 +1,77 @@
+﻿@model IEnumerable<PAT.Models.Patient.TestDetails>
+
+@{
+    ViewBag.Title = "ViewPatients";
+}
+
+<h2>ViewPatients</h2>
+
+<p>
+   
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TestDetails_IN_PI.FirstName)
+        </th>
+        <td>
+            @Html.DisplayNameFor(model => model.TestDetails_IN_PI.Illnes)
+        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.Test_TODO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestPerformedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Test_Result)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestDetails_IN_PI.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestDetails_IN_PI.Illnes)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Test_TODO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestPerformedDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Test_Result)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TestPrice)
+    </td>
+    <td>
+        @if (item.isActive == true)
+        {
+            <span>| Add Test |</span>
+        }
+        else
+        {
+            <span>| @Html.ActionLink("Add Test", "AddTest", new { id = item.ID }) |</span>
+        }
+        @if (item.isActive == false)
+        {
+            <span>| Add Result |</span>
+        }
+        else
+        {
+            <span>| @Html.ActionLink("Add Result", "AddResult", new { id = item.ID }) |</span>
+        }
+    </td>
+</tr>
+}
+
+</table>
+<hr />

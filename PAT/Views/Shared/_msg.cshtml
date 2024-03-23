@@ -1,0 +1,12 @@
+﻿@{ try
+    {
+        if (TempData["Error"] != null)
+        {
+            <script>
+                Swal.fire('PTS', '@TempData["Error"]', '@TempData["msgType"]');
+            </script>
+
+        }
+    }
+    catch { }
+}
