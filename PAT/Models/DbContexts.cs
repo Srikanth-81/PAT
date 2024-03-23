@@ -27,5 +27,7 @@ namespace PAT.Models
         public DbSet<Roles_> roles { get; set; }
         public DbSet<DietRecommendation> DietRecommendations { get; set; }
         public DbSet<TestDetails> Tests { get; set; }
+
+        public int MyProperty { get; set; }
     }
 }
